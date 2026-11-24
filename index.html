@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081924" />
+    <title>深海禅定 · 液态玻璃 UI 原型</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div>
+            <p class="eyebrow">FLOW FOCUS / 01</p>
+            <p class="brand-name">深海禅定</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="主导航">
+          <button class="nav-item active" data-view="aquarium"><span class="nav-icon">⌁</span>我的水族箱</button>
+          <button class="nav-item" data-view="scenes"><span class="nav-icon">▦</span>场景图鉴</button>
+          <button class="nav-item" data-view="store"><span class="nav-icon">✦</span>鱼苗商店</button>
+          <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>禅定设置</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="wallet-card">
+            <div class="coin-icon">◈</div>
+            <div>
+              <p class="eyebrow">FOCUS COINS</p>
+              <strong id="coin-balance">1,280</strong>
+            </div>
+            <button class="tiny-button" data-view-target="store" aria-label="前往商店">＋</button>
+          </div>
+          <div class="mini-status"><span class="status-dot"></span>今日专注 <b>02h 40m</b></div>
+          <p class="version-label">GLASS PREVIEW · 2026</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">MONDAY · 11月 23日</p>
+            <h1 id="page-title">我的水族箱</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" aria-label="通知">◌<span class="notification-dot"></span></button>
+            <div class="profile-chip"><span class="avatar">Y</span><span>Yuki</span><span class="chevron">⌄</span></div>
+          </div>
+        </header>
+
+        <section class="view-panel active" id="view-aquarium">
+          <div class="focus-strip">
+            <div class="focus-strip-copy">
+              <span class="live-pill"><i></i> READY TO DIVE</span>
+              <h2>给自己一段不被打扰的潮汐时间</h2>
+              <p>锁定手机后，水族箱会替你照看时间。完成一轮禅定，收下新的鱼苗。</p>
+            </div>
+            <div class="focus-strip-action">
+              <div class="focus-presets" role="group" aria-label="禅定时长">
+                <button class="preset active" data-minutes="25">25<span>MIN</span></button>
+                <button class="preset" data-minutes="50">50<span>MIN</span></button>
+                <button class="preset" data-minutes="90">90<span>MIN</span></button>
+              </div>
+              <button class="primary-button" id="start-focus"><span>开始禅定</span><b>→</b></button>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="aquarium-card card-surface">
+              <div class="card-heading">
+                <div><p class="eyebrow">ACTIVE SCENE / 04</p><h3>月光海沟</h3></div>
+                <button class="ghost-button" data-view-target="scenes">换个场景 <span>↗</span></button>
+              </div>
+              <div class="aquarium-viewport moon-trench" aria-label="月光海沟水族箱预览">
+                <div class="scanline"></div>
+                <img class="real-fish real-clownfish" src="assets/clownfish.png" alt="" aria-hidden="true" />
+                <img class="real-fish real-tang" src="assets/blue-tang.png" alt="" aria-hidden="true" />
+                <img class="real-fish real-clownfish-small" src="assets/clownfish.png" alt="" aria-hidden="true" />
+                <div class="moon"></div>
+                <div class="star star-a"></div><div class="star star-b"></div><div class="star star-c"></div><div class="star star-d"></div>
+                <div class="bubble bubble-a"></div><div class="bubble bubble-b"></div><div class="bubble bubble-c"></div><div class="bubble bubble-d"></div>
+                <div class="kelp kelp-a"></div><div class="kelp kelp-b"></div><div class="kelp kelp-c"></div>
+                <div class="reef reef-a"></div><div class="reef reef-b"></div>
+                
+                <div class="aquarium-label"><span>WATER TEMP</span><b>24°C</b></div>
+              </div>
+              <div class="aquarium-footer">
+                <div class="creature-count"><div class="fish-avatar fish-avatar-orange"></div><div class="fish-avatar fish-avatar-pink"></div><div class="fish-avatar fish-avatar-teal"></div><span>+ 3 位住客</span></div>
+                <div class="water-meter"><span>水质</span><div><i style="width:86%"></i></div><b>86</b></div>
+              </div>
+            </div>
+
+            <aside class="utility-column">
+              <div class="todo-card card-surface">
+                <div class="card-heading compact"><div><p class="eyebrow">TIDE LIST</p><h3>今日潮汐清单</h3></div><button class="add-button" id="add-todo">＋</button></div>
+                <div class="todo-progress"><div><span>2 / 4 完成</span><b>50%</b></div><div class="progress-track"><i style="width:50%"></i></div></div>
+                <ul class="todo-list" id="todo-list">
+                  <li class="done"><button class="check-button">✓</button><span>回复重要邮件</span><em>09:30</em></li>
+                  <li><button class="check-button"></button><span>整理产品灵感</span><em>11:00</em></li>
+                  <li><button class="check-button"></button><span>给妈妈打电话</span><em>18:30</em></li>
+                  <li class="done"><button class="check-button">✓</button><span>补充猫粮</span><em>已完成</em></li>
+                </ul>
+                <button class="text-button">查看全部任务 <span>→</span></button>
+              </div>
+
+              <div class="weather-card card-surface">
+                <div class="card-heading compact"><div><p class="eyebrow">OUTSIDE WATER</p><h3>上海 · 今天</h3></div><span class="weather-glyph">☼</span></div>
+                <div class="weather-main"><strong>18°</strong><span>多云<br /><small>体感 17°</small></span></div>
+                <div class="weather-range"><span>湿度 64%</span><span>东风 2 级</span><span>空气 42</span></div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="bottom-grid">
+            <div class="recent-card card-surface">
+              <div class="card-heading compact"><div><p class="eyebrow">RECENT DIVES</p><h3>最近的禅定记录</h3></div><button class="ghost-button">本周 <span>⌄</span></button></div>
+              <div class="session-row"><div class="session-date"><b>23</b><span>11月</span></div><div class="session-info"><b>深海工作流</b><span>25 分钟 · 月光海沟</span></div><div class="session-reward">+ 80 <span>◈</span></div><div class="session-state">完成</div></div>
+              <div class="session-row"><div class="session-date"><b>22</b><span>11月</span></div><div class="session-info"><b>读完这一章</b><span>50 分钟 · 珊瑚花园</span></div><div class="session-reward">+ 140 <span>◈</span></div><div class="session-state">完成</div></div>
+            </div>
+            <div class="unlock-card card-surface">
+              <div class="unlock-art"><div class="lock-shape">✦</div></div>
+              <div><p class="eyebrow">ALL SCENES OPEN</p><h3>全部水域已开放</h3><p>四片水域都可以用来开始禅定。</p><div class="unlock-progress"><i style="width:100%"></i></div></div>
+              <span class="unlock-count">4 / 4</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="view-panel" id="view-scenes">
+          <div class="section-intro"><div><p class="eyebrow">SCENE ARCHIVE / 08</p><h2>选择一片潮汐</h2><p>不同的水域，适合不同的专注节奏。场景会在锁定期间成为你的唯一屏幕。</p></div><div class="filter-tabs"><button class="active">全部</button><button>已解锁</button><button>未使用</button></div></div>
+          <div class="scene-grid">
+            <article class="scene-card selected"><div class="scene-preview moon-trench"><img class="real-fish scene-fish scene-fish-clown" src="assets/clownfish.png" alt="" aria-hidden="true" /><div class="moon"></div><div class="star star-a"></div><div class="kelp kelp-a"></div></div><div class="scene-meta"><div><p class="eyebrow">SCENE 04</p><h3>月光海沟</h3></div><span class="selected-mark">✓ 已解锁 · 使用中</span></div><p class="scene-desc">安静、深蓝，适合第一轮专注。</p></article>
+            <article class="scene-card"><div class="scene-preview coral-garden"><img class="real-fish scene-fish scene-fish-tang" src="assets/blue-tang.png" alt="" aria-hidden="true" /><div class="sun-glow"></div><div class="coral coral-a"></div><div class="coral coral-b"></div></div><div class="scene-meta"><div><p class="eyebrow">SCENE 02</p><h3>珊瑚花园</h3></div><span class="selected-mark">✓ 已解锁</span></div><p class="scene-desc">明亮的浅海，适合下午灵感。</p></article>
+            <article class="scene-card"><div class="scene-preview neon-reef"><img class="real-fish scene-fish scene-fish-clown-alt" src="assets/clownfish.png" alt="" aria-hidden="true" /><div class="neon-orb"></div><div class="neon-coral"></div></div><div class="scene-meta"><div><p class="eyebrow">SCENE 06</p><h3>霓虹礁石</h3></div><span class="selected-mark">✓ 已解锁</span></div><p class="scene-desc">彩色电流，适合创意冲刺。</p></article>
+            <article class="scene-card"><div class="scene-preview polar-current"><div class="aurora"></div></div><div class="scene-meta"><div><p class="eyebrow">SCENE 08</p><h3>极光洋流</h3></div><span class="selected-mark">✓ 已解锁</span></div><p class="scene-desc">还没有人抵达过的北方水域。</p></article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="view-store">
+          <div class="section-intro"><div><p class="eyebrow">NURSERY / 23 RESIDENTS</p><h2>把下一位住客带回家</h2><p>用完成禅定获得的金币，购买鱼苗并投放到你的水族箱。</p></div><div class="store-balance"><span>当前余额</span><b><i>◈</i> <span id="store-balance">1,280</span></b></div></div>
+          <div class="store-layout"><div class="fish-feature card-surface"><div class="feature-water"><img class="real-jellyfish" src="assets/moon-jellyfish.png" alt="" aria-hidden="true" /><div class="bubble bubble-a"></div><div class="bubble bubble-b"></div></div><div class="feature-copy"><p class="eyebrow">FEATURED FRY / 07</p><h3>月光水母</h3><p>在深蓝里缓慢呼吸的发光住客。投放后会跟随你的专注进度长大。</p><div class="feature-pills"><span>夜行</span><span>发光</span><span>稀有</span></div><button class="primary-button buy-button" data-cost="260" data-item="月光水母">购买并投放 <b>→</b></button></div></div><div class="fish-grid"><article class="fish-product card-surface"><div class="product-art product-orange"></div><div class="product-copy"><h3>橘子小丑鱼</h3><span>热情 · 常见</span><button class="price-button" data-cost="120" data-item="橘子小丑鱼">120 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-pink"></div><div class="product-copy"><h3>粉珊瑚鱼</h3><span>慢热 · 稀有</span><button class="price-button" data-cost="200" data-item="粉珊瑚鱼">200 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-teal"></div><div class="product-copy"><h3>薄荷蓝鱼</h3><span>好奇 · 常见</span><button class="price-button" data-cost="150" data-item="薄荷蓝鱼">150 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-gold"></div><div class="product-copy"><h3>金色灯笼鱼</h3><span>安静 · 传说</span><button class="price-button" data-cost="480" data-item="金色灯笼鱼">480 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-angelfish"></div><div class="product-copy"><h3>皇家神仙鱼</h3><span>优雅 · 稀有</span><button class="price-button" data-cost="260" data-item="皇家神仙鱼">260 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-yellow"></div><div class="product-copy"><h3>黄尾刺尾鱼</h3><span>明亮 · 常见</span><button class="price-button" data-cost="180" data-item="黄尾刺尾鱼">180 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-lionfish"></div><div class="product-copy"><h3>狮子鱼</h3><span>缓慢 · 传说</span><button class="price-button" data-cost="360" data-item="狮子鱼">360 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-silver"></div><div class="product-copy"><h3>银色鲹鱼</h3><span>群游 · 常见</span><button class="price-button" data-cost="160" data-item="银色鲹鱼">160 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-mandarin"></div><div class="product-copy"><h3>曼达林鱼</h3><span>谨慎 · 传说</span><button class="price-button" data-cost="420" data-item="曼达林鱼">420 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-moorish"></div><div class="product-copy"><h3>花马蹄鱼</h3><span>优雅 · 稀有</span><button class="price-button" data-cost="300" data-item="花马蹄鱼">300 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-butterflyfish"></div><div class="product-copy"><h3>长吻蝶鱼</h3><span>灵巧 · 稀有</span><button class="price-button" data-cost="280" data-item="长吻蝶鱼">280 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-pufferfish"></div><div class="product-copy"><h3>绿斑河豚</h3><span>好奇 · 传说</span><button class="price-button" data-cost="380" data-item="绿斑河豚">380 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-royal-gramma"></div><div class="product-copy"><h3>皇家丝绒鱼</h3><span>安静 · 稀有</span><button class="price-button" data-cost="250" data-item="皇家丝绒鱼">250 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-firefish"></div><div class="product-copy"><h3>火焰虾虎鱼</h3><span>警觉 · 常见</span><button class="price-button" data-cost="180" data-item="火焰虾虎鱼">180 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-discus"></div><div class="product-copy"><h3>彩纹七彩神仙</h3><span>温和 · 稀有</span><button class="price-button" data-cost="320" data-item="彩纹七彩神仙">320 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-seahorse"></div><div class="product-copy"><h3>海马</h3><span>安静 · 传说</span><button class="price-button" data-cost="390" data-item="海马">390 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-scallop"></div><div class="product-copy"><h3>扇贝</h3><span>安静 · 常见</span><button class="price-button" data-cost="120" data-item="扇贝">120 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-mussel"></div><div class="product-copy"><h3>蓝贻贝</h3><span>群居 · 常见</span><button class="price-button" data-cost="140" data-item="蓝贻贝">140 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-oyster"></div><div class="product-copy"><h3>牡蛎</h3><span>安静 · 稀有</span><button class="price-button" data-cost="220" data-item="牡蛎">220 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-abalone"></div><div class="product-copy"><h3>鲍鱼</h3><span>慢热 · 稀有</span><button class="price-button" data-cost="260" data-item="鲍鱼">260 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-conch"></div><div class="product-copy"><h3>海螺</h3><span>慢速 · 常见</span><button class="price-button" data-cost="150" data-item="海螺">150 ◈</button></div></article><article class="fish-product card-surface"><div class="product-art product-hermit"></div><div class="product-copy"><h3>寄居蟹</h3><span>好奇 · 常见</span><button class="price-button" data-cost="170" data-item="寄居蟹">170 ◈</button></div></article></div></div>
+        </section>
+
+        <section class="view-panel" id="view-settings">
+          <div class="section-intro"><div><p class="eyebrow">FOCUS RULES / ANDROID</p><h2>禅定时，你想留下什么</h2><p>这是锁定态的规则预览。确认后会映射到 Android 的专注模式与通知策略。</p></div><span class="android-badge">ANDROID READY</span></div>
+          <div class="settings-layout"><div class="settings-card card-surface"><div class="card-heading"><div><p class="eyebrow">LOCKDOWN PROFILE</p><h3>深海专注</h3></div><span class="profile-state">已启用</span></div><div class="setting-row"><div><b>锁定时长</b><span>完成后获得金币奖励</span></div><div class="duration-control"><button>−</button><strong>25 分钟</strong><button>＋</button></div></div><div class="setting-row"><div><b>锁定期间允许</b><span>电话和短信始终可以进来</span></div><div class="setting-icons"><span>☎</span><span>✉</span></div></div><div class="setting-row"><div><b>通知白名单</b><span>只展示选中 App 的摘要</span></div><button class="outline-button">管理 3 个 App <span>→</span></button></div><div class="allow-list"><div class="app-chip"><span class="app-icon notes">N</span><span>备忘录</span><i>✓</i></div><div class="app-chip"><span class="app-icon weather">☼</span><span>天气</span><i>✓</i></div><div class="app-chip"><span class="app-icon chat">⌁</span><span>微信</span><i>✓</i></div><button class="app-chip add-app">＋ 添加 App</button></div></div><div class="lock-preview-card card-surface"><p class="eyebrow">LOCK SCREEN PREVIEW</p><div class="phone-frame"><div class="phone-status"><span>9:41</span><span>▴ 100%</span></div><div class="phone-aquarium"><img class="real-fish phone-real-fish" src="assets/clownfish.png" alt="" aria-hidden="true" /><div class="moon"></div><div class="kelp kelp-a"></div><div class="phone-lock-text"><span>专注进行中</span><b>24:59</b><small>月光海沟 · 25 分钟</small></div></div><div class="phone-rail"><div><span>今日天气</span><b>18° 多云</b></div><div><span>备忘录</span><b>产品灵感 · 2 条</b></div></div><div class="phone-bottom"><span>电话 / 短信保持可用</span><button>退出禅定</button></div></div></div></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="focus-modal" aria-hidden="true">
+      <div class="focus-modal" role="dialog" aria-modal="true" aria-labelledby="focus-modal-title">
+        <button class="modal-close" id="close-focus" aria-label="关闭">×</button>
+        <div class="modal-aquarium moon-trench"><img class="real-fish modal-real-fish" src="assets/blue-tang.png" alt="" aria-hidden="true" /><div class="moon"></div><div class="star star-a"></div><div class="star star-b"></div><div class="kelp kelp-a"></div></div>
+        <div class="modal-copy"><p class="eyebrow">LOCKDOWN PREVIEW</p><h2 id="focus-modal-title">准备潜入月光海沟？</h2><p>开始后，手机会进入专注锁定。电话、短信和你选择的 3 个 App 仍会保持可见。</p><div class="modal-rule"><span>本轮时长</span><b id="modal-duration">25 分钟</b></div><div class="modal-rule"><span>完成奖励</span><b class="reward">+ 80 ◈</b></div><button class="primary-button" id="confirm-focus">锁定手机并开始 <b>→</b></button></div>
+      </div>
+    </div>
+
+    <aside class="fish-inspector" id="fish-inspector" aria-live="polite" aria-hidden="true">
+      <button class="fish-inspector-close" id="close-fish-inspector" aria-label="关闭鱼类信息">×</button>
+      <p class="eyebrow">AQUARIUM FIELD NOTE</p>
+      <h2 id="fish-inspector-title">小丑鱼</h2>
+      <p id="fish-inspector-description">会在珊瑚和海葵之间巡游的活泼住客。</p>
+      <div class="fish-inspector-meta"><span id="fish-inspector-temperament">活泼</span><span id="fish-inspector-rarity">常见</span><span id="fish-inspector-water">浅海</span></div>
+      <div class="fish-inspector-foot"><span>点击其他鱼查看住客档案</span><b>◈ <span id="fish-inspector-bond">78</span></b></div>
+    </aside>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

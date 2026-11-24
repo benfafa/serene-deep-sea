@@ -1,0 +1,24 @@
+# macOS & IDE
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
+# Gradle & Android build artifacts
+**/build/
+.gradle/
+android-app/.gradle/
+android-app/.tooling/
+android-app/local.properties
+*.apk
+*.aab
+*.ap_
+*.dex
+*.jks
+*.keystore
+captures/
+
+# Backups & logs
+*.bak
+brand/backup/
+*.log
